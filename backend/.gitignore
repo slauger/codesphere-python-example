@@ -1,0 +1,9 @@
+junit/*
+coverage.xml
+pytest-coverage.txt
+.coverage
+
+__pycache__/*
+tests/__pycache__/*
+
+bandit-results.txt
