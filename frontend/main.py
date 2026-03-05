@@ -7,9 +7,9 @@ import requests
 WORKSPACE_ID = os.getenv("WORKSPACE_ID")
 
 if WORKSPACE_ID:
-    API_URL = f"http://ws-server-{WORKSPACE_ID}-backend.workspaces:3000/api/data"
+    API_URL = f"http://ws-server-{WORKSPACE_ID}-backend.workspaces:8080/api/data"
 else:
-    API_URL = os.getenv("API_URL", "http://localhost:3000/api/data")
+    API_URL = os.getenv("API_URL", "http://localhost:8080/api/data")
 
 st.set_page_config(
     page_title="Streamlit Demo",

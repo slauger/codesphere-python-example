@@ -26,7 +26,7 @@ run:
     steps:
       - name: start frontend application
         command: "cd frontend && uv run streamlit run main.py --server.headless true
-          --server.address 0.0.0.0 --server.port 3000 --browser.gatherUsageStats
+          --server.address 0.0.0.0 --server.port 8080 --browser.gatherUsageStats
           false --logger.level info "
     plan: 8
     replicas: 1
@@ -37,7 +37,7 @@ run:
   backend:
     steps:
       - name: start backend application
-        command: cd backend && uv run uvicorn app:app --port 3000 --host 0.0.0.0
+        command: cd backend && uv run uvicorn app:app --port 8080 --host 0.0.0.0
           --workers 2
     plan: 8
     replicas: 1
@@ -45,7 +45,7 @@ run:
   api-docs:
     steps:
       - name: deploy docs
-        command: cd backend && uv run uvicorn doc:app_docs --host 0.0.0.0 --port 3000
+        command: cd backend && uv run uvicorn doc:app_docs --host 0.0.0.0 --port 8080
           --workers 2
     plan: 8
     replicas: 1
