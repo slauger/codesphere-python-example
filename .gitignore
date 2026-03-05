@@ -5,3 +5,4 @@ __pycache__/
 test-results/
 .coverage
 *.egg-info/
+.env
